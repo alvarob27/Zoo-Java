@@ -1,0 +1,19 @@
+package zoo;
+
+public class PrincipalZoologico {
+
+	public static void main(String[] args) {
+		
+		EmpleadoZoo empleado1 = new EmpleadoZoo(1, "Álvaro", "Bárcena Lasala", 1200);
+		EmpleadoZoo empleado2 = new EmpleadoZoo(2, "Manuel", "Fernandez Esteban", 1100);
+		EmpleadoZoo empleado3 = new EmpleadoZoo(3, "Laura", "Martínez López", 1500);
+		EmpleadoZoo empleado4 = new EmpleadoZoo(4, "Juan", "Martínez García", 1200);
+		EmpleadoZoo empleado5 = new EmpleadoZoo(5, "Sergio", "García Gordo", 1300);
+		EmpleadoZoo empleado6 = new EmpleadoZoo(6, "Javier", "Pérez Lasala", 1200);
+		EmpleadoZoo empleado7 = new EmpleadoZoo(7, "Juan", "Caballero Díez", 900);
+		EmpleadoZoo empleado8 = new EmpleadoZoo(8, "Pedro", "Sánchez García", 1200);
+		
+
+	}
+
+}

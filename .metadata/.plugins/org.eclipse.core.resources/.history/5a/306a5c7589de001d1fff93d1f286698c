@@ -1,0 +1,29 @@
+package zoo;
+
+public class EmpleadoZoo implements Cuidador {
+
+	private int numEmpleado;
+	private String nombre;
+	private String apellidos;
+	private double salario;
+	
+	
+	
+	public EmpleadoZoo(int numEmpleado, String nombre, String apellidos, double salario) {
+		this.numEmpleado = numEmpleado;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.salario = salario;
+	}
+
+
+
+	@Override
+	public void Alimentar(int cantidad) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+
+}

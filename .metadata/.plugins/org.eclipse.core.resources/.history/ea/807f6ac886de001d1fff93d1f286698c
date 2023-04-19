@@ -1,0 +1,14 @@
+package zoo;
+
+import java.util.ArrayList;
+
+public class Zoo {
+
+	private ArrayList<Habitat> habitats;
+
+	public Zoo() {
+		habitats = new ArrayList<>();
+	}
+	
+	
+}

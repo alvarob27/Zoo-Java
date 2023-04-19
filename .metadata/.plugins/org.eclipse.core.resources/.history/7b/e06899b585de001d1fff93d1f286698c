@@ -1,0 +1,7 @@
+package zoo;
+
+public class Aves extends Animales {
+
+	private int longitudPico;
+	private boolean rapaz;
+}

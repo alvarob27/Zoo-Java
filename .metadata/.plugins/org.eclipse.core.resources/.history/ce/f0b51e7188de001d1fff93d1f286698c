@@ -1,0 +1,43 @@
+package zoo;
+
+import java.util.ArrayList;
+
+public class Habitat {
+
+	private String nombre;
+	private ArrayList<Animales> animales;
+	
+	public Habitat(String nombre, ArrayList<Animales> animales) {
+		this.nombre = nombre;
+		this.animales = animales;
+	}
+	
+	public void AnadirAnimal(Animales animal) {
+		if(!animales.contains(animal)) {
+			animales.add(animal);
+		}
+		else {
+			System.out.println("Ya existe ese animal en el habitat " + this.getNombre() );
+		}
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public ArrayList<Animales> getAnimales() {
+		return animales;
+	}
+
+	public void setAnimales(ArrayList<Animales> animales) {
+		this.animales = animales;
+	}
+	
+	
+	
+	
+}

@@ -1,0 +1,183 @@
+package zoo;
+
+import java.util.Scanner;
+
+public class PrincipalZoologico {
+
+	static Scanner entrada = new Scanner(System.in);
+
+	public static void main(String[] args) {
+
+		EmpleadoZoo empleado1 = new EmpleadoZoo(1, "Álvaro", "Bárcena Lasala", 1200);
+		EmpleadoZoo empleado2 = new EmpleadoZoo(2, "Manuel", "Fernandez Esteban", 1100);
+		EmpleadoZoo empleado3 = new EmpleadoZoo(3, "Laura", "Martínez López", 1500);
+		EmpleadoZoo empleado4 = new EmpleadoZoo(4, "Juan", "Martínez García", 1200);
+		EmpleadoZoo empleado5 = new EmpleadoZoo(5, "Sergio", "García Gordo", 1300);
+		EmpleadoZoo empleado6 = new EmpleadoZoo(6, "Javier", "Pérez Lasala", 1200);
+		EmpleadoZoo empleado7 = new EmpleadoZoo(7, "Juan", "Caballero Díez", 900);
+		EmpleadoZoo empleado8 = new EmpleadoZoo(8, "Pedro", "Sánchez García", 1200);
+
+		Habitat aviario = new Habitat("aviario");
+		Habitat reptiliario = new Habitat("reptiliario");
+		Habitat terrario = new Habitat("terrario");
+
+		Zoo miZoo = new Zoo();
+
+		int option = 0;
+
+		while (option != 8) {
+
+			System.out.println("******MENÚ******");
+			System.out.println("1. Agregar y eliminar animales del zoológico.");
+			System.out.println("2. Agregar y eliminar hábitats del zoológico.");
+			System.out.println("3. Agregar y eliminar cuidadores del zoológico.");
+			System.out.println("4. Asignar animales a hábitats específicos.");
+			System.out.println("5. Asignar cuidadores a animales específicos.");
+			System.out.println("6. Mostrar información detallada de cada animal, hábitat y cuidador.");
+			System.out.println("7. Mostrar los animales del zoo ordenados por edad");
+			System.out.println("8. Salir");
+
+			option = entrada.nextInt();
+			entrada.nextLine();
+
+			if (option == 1) {
+
+				System.out.println("Quieres añadir o eliminar un animal?");
+				String respuesta = entrada.nextLine();
+
+				if (respuesta.equalsIgnoreCase("añadir")) {
+
+					System.out.println("Introduce que animal quieres añadir(mamifero, ave, reptil)");
+					String tipoAnimal = entrada.nextLine();
+
+					if (tipoAnimal.equalsIgnoreCase("mamifero")) {
+
+						System.out.println("Introduce el habitat");
+						String nombreHabitat = entrada.nextLine();
+
+						if (!miZoo.getHabitats().contains(nombreHabitat)) {
+
+							Habitat nuevohabitat = new Habitat(nombreHabitat);
+							miZoo.AnadirHabitat(nuevohabitat);
+							System.out.println("Introduce el nombre");
+							String nombre = entrada.nextLine();
+							System.out.println("Introduce el genero (M-F)");
+							char genero = entrada.nextLine().charAt(0);
+							System.out.println("Introduce la especie");
+							String especie = entrada.nextLine();
+							System.out.println("Introduce la edad");
+							int edad = entrada.nextInt();
+							entrada.nextLine();
+							System.out.println("Introduce el desplazamiento (“por tierra”, “por mar” o “por aire”).");
+							String desplazamiento = entrada.nextLine();
+							Mamiferos mamifero = new Mamiferos(nombre, genero, especie, edad, nombreHabitat, empleado8,
+									desplazamiento);
+
+						}
+
+					}
+					if (tipoAnimal.equalsIgnoreCase("ave")) {
+						
+						System.out.println("Introduce el habitat");
+						String nombreHabitat = entrada.nextLine();
+						
+						if (!miZoo.getHabitats().contains(nombreHabitat)) {
+							
+							Habitat nuevohabitat = new Habitat(nombreHabitat);
+							miZoo.AnadirHabitat(nuevohabitat);
+							System.out.println("Introduce el nombre");
+							String nombre = entrada.nextLine();
+							System.out.println("Introduce el genero (M-F)");
+							char genero = entrada.nextLine().charAt(0);
+							System.out.println("Introduce la especie");
+							String especie = entrada.nextLine();
+							System.out.println("Introduce la edad");
+							int edad = entrada.nextInt();
+							entrada.nextLine();
+							System.out.println("Introduce la longitud del pico");
+							int longitudPico = entrada.nextInt();
+							entrada.nextLine();
+							System.out.println("Introduce si es rapaz o no (true-false)");
+							boolean rapaz = entrada.nextBoolean();
+
+							Aves ave = new Aves(nombre, genero, especie, edad, nombreHabitat, empleado8, longitudPico,
+									rapaz);
+						}
+
+					}
+					
+					if(tipoAnimal.equalsIgnoreCase("reptil")) {
+						System.out.println("Introduce el habitat");
+						String nombreHabitat = entrada.nextLine();
+						
+						if (!miZoo.getHabitats().contains(nombreHabitat)) {
+							
+							Habitat nuevohabitat = new Habitat(nombreHabitat);
+							miZoo.AnadirHabitat(nuevohabitat);
+							System.out.println("Introduce el nombre");
+							String nombre = entrada.nextLine();
+							System.out.println("Introduce el genero (M-F)");
+							char genero = entrada.nextLine().charAt(0);
+							System.out.println("Introduce la especie");
+							String especie = entrada.nextLine();
+							System.out.println("Introduce la edad");
+							int edad = entrada.nextInt();
+							entrada.nextLine();
+							System.out.println("Introduce el color de las escamas");
+							String colorEscamas = entrada.nextLine();
+
+							Reptiles reptil = new Reptiles(nombre, genero, especie, edad, nombreHabitat, empleado8, colorEscamas);
+						}
+					}
+				}
+				
+				else if(respuesta.equalsIgnoreCase("eliminar")) {
+					System.out.println("Introduce el habitat de donde quieres eliminar un animal");
+					String nombreHabitat = entrada.nextLine();
+					
+					if (miZoo.getHabitats().contains(nombreHabitat)) {
+						System.out.println("Introduce el nombre del animal a eliminar");
+						String animal = entrada.nextLine();
+						miZoo.DevolverHabitat(nombreHabitat).EliminarAnimal(miZoo.DevolverHabitat(nombreHabitat).DevolverAnimal(animal));
+					}
+				}
+			}
+
+				if (option == 2) {
+
+				}
+
+				if (option == 3) {
+
+				}
+
+				if (option == 4) {
+
+				}
+
+				if (option == 5) {
+
+				}
+
+				if (option == 6) {
+
+				}
+
+				if (option == 7) {
+
+				}
+
+				if (option == 8) {
+
+				}
+
+				if (option < 1 || option > 8) {
+					System.out.println("Opción inválida");
+				}
+
+			}
+
+		}
+
+	}
+

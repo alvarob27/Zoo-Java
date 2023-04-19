@@ -1,0 +1,56 @@
+package zoo;
+
+import java.util.ArrayList;
+
+public class Habitat {
+
+	private String nombre;
+	private ArrayList<Animales> animales;
+	
+	public Habitat(String nombre, ArrayList<Animales> animales) {
+		this.nombre = nombre;
+		this.animales = animales;
+	}
+	
+	public void AnadirAnimal(Animales animal) {
+		if(!animales.contains(animal)) {
+			animales.add(animal);
+		}
+		else {
+			System.out.println("Ya existe ese animal en el habitat " + this.getNombre() );
+		}
+	}
+	
+	public void EliminarAnimal(Animales animal) {
+		if(animales.contains(animal)) {
+			for(int i=0; i<animales.size(); i++) {
+				if (animales.get(i).equals(animal)) {
+					animales.remove(animales.get(i));
+				}
+			}
+		}
+		else {
+			System.out.println("No se puede eliminar el habitat porque no existe en el Zoo");
+		}
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public ArrayList<Animales> getAnimales() {
+		return animales;
+	}
+
+	public void setAnimales(ArrayList<Animales> animales) {
+		this.animales = animales;
+	}
+	
+	
+	
+	
+}

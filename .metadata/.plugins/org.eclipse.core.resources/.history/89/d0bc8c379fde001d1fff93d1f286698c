@@ -1,0 +1,88 @@
+package zoo;
+
+public class Animales implements Comparable {
+
+	private String nombre;
+	private char genero;
+	private String especie;
+	private int edad;
+	private Habitat habitat;
+	private EmpleadoZoo cuidador;
+	
+	public Animales(String nombre, char genero, String especie, int edad, Habitat habitat, EmpleadoZoo cuidador) {
+		this.nombre = nombre;
+		this.genero = genero;
+		this.especie = especie;
+		this.edad = edad;
+		this.habitat = habitat;
+		this.cuidador = cuidador;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public char getGenero() {
+		return genero;
+	}
+
+	public void setGenero(char genero) {
+		this.genero = genero;
+	}
+
+	public String getEspecie() {
+		return especie;
+	}
+
+	public void setEspecie(String especie) {
+		this.especie = especie;
+	}
+
+	public int getEdad() {
+		return edad;
+	}
+
+	public void setEdad(int edad) {
+		this.edad = edad;
+	}
+
+	public Habitat getHabitat() {
+		return habitat;
+	}
+
+	public void setHabitat(Habitat habitat) {
+		this.habitat = habitat;
+	}
+
+	public EmpleadoZoo getCuidador() {
+		return cuidador;
+	}
+
+	public void setCuidador(EmpleadoZoo cuidador) {
+		this.cuidador = cuidador;
+	}
+
+	@Override
+	public String toString() {
+		return "Animales [nombre=" + nombre + ", genero=" + genero + ", especie=" + especie + ", edad=" + edad
+				+ ", habitat=" + habitat.getNombre() + ", cuidador= " + cuidador.getNumEmpleado() + " nombre: " +  cuidador.getNombre() + " apellidos: " + cuidador.getApellidos() + " salario: " + cuidador.getSalario() + "]";
+	}
+	
+	@Override
+	  public int compareTo(Object o) {
+	    
+	    if (this.getEdad()>((Animales) o).getEdad()) {
+	      
+	      return 1;
+	    }else if (this.getEdad()<((Animales) o).getEdad()) {
+	      return -1;
+	    }else {
+	      return 0;
+	    }
+	  }
+
+}

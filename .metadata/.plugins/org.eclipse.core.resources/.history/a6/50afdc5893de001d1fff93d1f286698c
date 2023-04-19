@@ -1,0 +1,22 @@
+package zoo;
+
+public class Animales {
+
+	private String nombre;
+	private char genero;
+	private String especie;
+	private int edad;
+	private String habitat;
+	private EmpleadoZoo cuidador;
+	
+	public Animales(String nombre, char genero, String especie, int edad, String habitat, EmpleadoZoo cuidador) {
+		this.nombre = nombre;
+		this.genero = genero;
+		this.especie = especie;
+		this.edad = edad;
+		this.habitat = habitat;
+		this.cuidador = cuidador;
+	}
+	
+	
+}

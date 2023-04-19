@@ -1,0 +1,78 @@
+package zoo;
+
+public class EmpleadoZoo implements Cuidador {
+
+	private int numEmpleado;
+	private String nombre;
+	private String apellidos;
+	private double salario;
+	
+	
+	
+	public EmpleadoZoo(int numEmpleado, String nombre, String apellidos, double salario) {
+		this.numEmpleado = numEmpleado;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.salario = salario;
+	}
+
+
+
+	@Override
+	public void Alimentar(int cantidad) {
+		
+		
+	}
+
+
+
+	public int getNumEmpleado() {
+		return numEmpleado;
+	}
+
+
+
+	public void setNumEmpleado(int numEmpleado) {
+		this.numEmpleado = numEmpleado;
+	}
+
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+
+	public String getApellidos() {
+		return apellidos;
+	}
+
+
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+
+
+
+	public double getSalario() {
+		return salario;
+	}
+
+
+
+	public void setSalario(double salario) {
+		this.salario = salario;
+	}
+
+	
+	
+
+}
